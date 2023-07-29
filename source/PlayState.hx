@@ -3253,7 +3253,7 @@ class PlayState extends MusicBeatState
 		if (health > 2)
 			health = 2;
 
-		if (iconP1.animation.frames == 3) {
+		if (iconP1.animation.frames == 4) {
 			if (healthBar.percent < 20)
 				iconP1.animation.curAnim.curFrame = 1;
 			else if (healthBar.percent >80)
@@ -3264,16 +3264,36 @@ class PlayState extends MusicBeatState
 		else {
 			if (healthBar.percent < 20)
 				iconP1.animation.curAnim.curFrame = 1;
+			else if (healthBar.percent >80)
+				iconP1.animation.curAnim.curFrame = 2;
+			else if (healthBar.percent >80 & Accuracy > 100)
+				iconP1.animation.curAnim.curFrame = 3;
 			else
 				iconP1.animation.curAnim.curFrame = 0;
 		}
-		if (iconP2.animation.frames == 3) {
+		else {
+			if (healthBar.percent < 20)
+				iconP1.animation.curAnim.curFrame = 1;
+			else
+				iconP1.animation.curAnim.curFrame = 0;
+		}
+		if (iconP2.animation.frames == 4) {
 			if (healthBar.percent > 80)
 				iconP2.animation.curAnim.curFrame = 1;
 			else if (healthBar.percent < 20)
 				iconP2.animation.curAnim.curFrame = 2;
 			else 
 				iconP2.animation.curAnim.curFrame = 0;
+		} else {
+			if (healthBar.percent < 20)
+				iconP1.animation.curAnim.curFrame = 1;
+			else if (healthBar.percent >80)
+				iconP1.animation.curAnim.curFrame = 2;
+			else if (healthBar.percent >80 & Accuracy > 100)
+				iconP1.animation.curAnim.curFrame = 3;
+			else
+				iconP1.animation.curAnim.curFrame = 0;
+		}
 		} else {
 			if (healthBar.percent > 80)
 				iconP2.animation.curAnim.curFrame = 1;
